@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Focused JavaScript | Module 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Bootstrap & core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  
+    <style>
+      body {
+        background-image: url("https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/5760589/910/607/m2/fpnw/wm1/sw1m1wku7ovtfneg7i040vp9a6abzti5rcwzvfnqdxjpoiz1lpeoovn6cedfw5vy-.jpg?1548363908&s=e0574f3201aecfdf1987148e7eacf716");
+        background-repeat: no-repeat;
+        background-size:cover;
+        color: white;
+      }
+      .bg-gradient {
+        opacity: 0.9;
+        background: linear-gradient(135deg, rgb(150, 105, 95) 0%, rgb(65, 47, 50) 20%);
+      }
+      .mt-5 {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+      <div id="navgationBar"></div>
+    <!-- Page Content -->
+    <div class="container bg-gradient">
+      <h1 class="my-4 text-center text-lg-left">Lé Petité Tacô Shopé</h1>
+      <h6 class="my-4 text-center text-lg-left">Where we have zé fanciest, most authéntic Frénch tacôs</h6>
+
+      <form>
+        <div class="form-group">
+          <label for="nameInput">Name</label>
+          <input type="text" class="form-control" id="nameInput" placeholder="Enter lé name of lé tacô">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-3">
+            <label for="caloriesFromInput">Calories:</label>
+            <input type="text" class="form-control" id="caloriesFromInput" placeholder="from">
+          </div>
+          <div class="form-group col-3">
+            <label for="caloriesToInput">to:</label>
+            <input type="text" class="form-control" id="caloriesToInput" placeholder="to">
+          </div>
+          <div class="form-group col-3">
+            <label for="priceFromInput">Prices:</label>
+            <input type="text" class="form-control" id="priceFromInput" placeholder="from">
+          </div>
+          <div class="form-group col-3">
+            <label for="priceToInput">to:</label>
+            <input type="text" class="form-control" id="priceToInput" placeholder="to">
+          </div>
+        </div>
+      </form>
+
+      <div class="table text-center text-lg-left mt-5">
+        <!-- container starts as empty. -->
+        <div class="row font-weight-bold">
+          <div class="col">Name</div>
+          <div class="col">Calories</div>
+          <div class="col">Qty</div>
+          <div class="col">Price</div>
+        </div>
+        <div class="taco-list">
+          <!-- <div class="row">
+            <div class="col">Example Taco</div>
+            <div class="col">100</div>
+            <div class="col">1</div>
+            <div class="col">$13.95</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <script src="../navBar/index.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

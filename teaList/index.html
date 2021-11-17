@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Focused JavaScript | Module 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Bootstrap & core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  
+    <style>
+      body {
+        background-image: url("https://i.pinimg.com/originals/41/77/bf/4177bfe634caae0466833b66e803bbea.jpg");
+      }
+      .mt-1 {
+        margin-top: 1px;
+      }
+      .mb-1 {
+        margin-bottom: 1px;
+      }
+      .mt-5 {
+        margin-top: 5px;
+      }
+
+      .btn-group-xs > .btn, .btn-xs {
+        padding: .25rem .4rem;
+        font-size: .875rem;
+        line-height: .5;
+        border-radius: .2rem;
+      }
+
+      .list-area .row {
+        border-bottom: 1px white solid;
+        height: 30px;
+        font-size: 12px;
+        line-height: 30px;
+      }
+      .tea-area .row:hover {
+        background-color: rgba(0, 0, 0, 0.42);
+      }
+
+      .list-area {
+        padding: 15px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        border-radius: 25px;
+      }
+
+      .tea-area {
+        height: 250px;
+        overflow-y: auto;
+      }
+
+      .tea-area div[class^='col'],
+      .tea-area div[class*=' col'] {
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .bg-gradient {
+        background: linear-gradient(135deg, rgb(8, 172, 74) 0%, rgb(231, 96, 6) 100%);
+        color: white;
+      }
+
+      .bg-gradient-2 {
+        background: linear-gradient(135deg, rgb(0, 187, 255) 0%, rgb(29, 216, 35) 100%);
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h1 class="my-4 text-center text-lg-left page-title">T-Shop</h1>
+      <h6 class="page-header">Highest grade tea straight from the farmer.</h6>
+
+      <div class="row mt-5">
+        <div class="col-8">
+          <div class="container bg-gradient list-area">
+            <div class="row">
+              <div class="col-4">Name</div>
+              <div class="col-2">Type</div>
+              <div class="col-4">Region</div>
+              <div class="col-2">Cost</div>
+            </div>
+            <div class="tea-area">
+              <!-- <div class="row">
+                <div class="col-4">Shui Xian Da Hong Pao</div>
+                <div class="col-2">oolong</div>
+                <div class="col-4">Wu Yi Shan, Fujian, China</div>
+                <div class="col-2">$12.95</div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-4 details-area">
+
+          <!-- <div class="card bg-gradient-2">
+            <img class="card-img" src="https://cdn.shopify.com/s/files/1/0220/5782/products/loose-leaf-baimudan-white-tea_1024x1024.jpg?v=1374547495" alt="Card image">
+            <div class="card-img-overlay">
+                <button class="btn btn-xs btn-outline-primary">buy ($12.95)</button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Shui Xian Da Hong Pao (oolong)</h5>
+              <p>Wu Yi Shan, Fujian, China</p>
+              <p class="card-text">Although this is the most famous oolong from the Wuyi Mountains, the origins of Da Hong Pao are enveloped in ethereal wisps of mystery. A centuries-old legend has it that The Big Red Robe was grown by Buddhist monks on otherwise inaccessible cliffs and picked by trained monkeys. Among the richest and rarest teas in the world, Da Hong Pao is more than 350 years old and is the highest grade of Wuyi oolong tea.</p>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

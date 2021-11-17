@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Focused JavaScript | Module 2 | Sorting</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap & core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  
+    <style>
+      body {
+        background-image: url("https://i2.wp.com/www.trapperspizza.com/wp-content/uploads/2019/05/Pizza-Background.jpg?fit=1200%2C800");
+        background-repeat: no-repeat;
+        background-size:cover;
+        color: white;
+      }
+      .mt-1 {
+        margin-top: 1px;
+      }
+      .mb-1 {
+        margin-bottom: 1px;
+      }
+      .mt-5 {
+        margin-top: 5px;
+      }
+
+      .btn-group-xs > .btn, .btn-xs {
+        padding: .25rem .4rem;
+        font-size: .875rem;
+        line-height: .5;
+        border-radius: .2rem;
+      }
+
+      .list-area .row {
+        border-bottom: 1px white solid;
+        height: 30px;
+        font-size: 12px;
+        line-height: 30px;
+      }
+      .item-area .row:hover {
+        background-color: rgba(0, 0, 0, 0.42);
+      }
+
+      .list-area {
+        padding: 15px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        border-radius: 25px;
+      }
+
+      .item-area {
+        height: 250px;
+        overflow-y: auto;
+      }
+
+      .item-area div[class^='col'],
+      .item-area div[class*=' col'] {
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .bg-gradient {
+        background: rgba(0, 0, 0, 0.42);
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+      <div id="navgationBar"></div>
+
+    <div class="container">
+      <h1 class="my-4 text-center text-lg-left page-title">Pizza The Hut</h1>
+      <h6 class="page-header">Rethinking how we do pizza</h6>
+
+      <div class="row">
+        <div class="col-6">
+          <form class="bg-gradient list-area">
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="enter customer name">
+              </div>
+              <div class="form-group col-6">
+                <label for="typeInput">Type</label>
+                <select type="text" class="form-control" id="typeInput">
+                  <option value="">- all -</option>
+                  <option value="cheese">cheese</option>
+                  <option value="mushroom">mushroom</option>
+                  <option value="pepperoni">pepperoni</option>
+                  <option value="works">works</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-3">
+                <label for="quantityFromInput">Quantity:</label>
+                <input type="text" class="form-control" id="quantityFromInput" placeholder="from">
+              </div>
+              <div class="form-group col-3">
+                <label for="quantityToInput">to:</label>
+                <input type="text" class="form-control" id="quantityToInput" placeholder="to">
+              </div>
+              <div class="form-group col-3">
+                <label for="priceFromInput">Cost:</label>
+                <input type="text" class="form-control" id="priceFromInput" placeholder="from">
+              </div>
+              <div class="form-group col-3">
+                <label for="priceToInput">to:</label>
+                <input type="text" class="form-control" id="priceToInput" placeholder="to">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sortInput">Current Sort</label>
+              <select id="sortInput" class="form-control form-control-sm">
+                <option value="" selected>none</option>
+                <option value="time-asc">time (earliest to latest)</option>
+                <option value="time-desc">time (latest to earliest)</option>
+                <option value="customer-asc">customer (a - z)</option>
+                <option value="customer-desc">customer (z - a)</option>
+                <option value="cost-asc">cost (low to high)</option>
+                <option value="cost-desc">cost (high to low)</option>
+                <option value="quantity-asc">quantity (smallest to largest)</option>
+                <option value="quantity-desc">quantity (largest to smallest)</option>
+                <option value="type-asc">type (a - z)</option>
+                <option value="type-desc">type (z - a)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-6">
+          <div class="container bg-gradient list-area">
+            <div class="row ">
+              <div class="col-2">Time <em data-type="time" class="sort sort-time fa fa-fw fa-sort"></em></div>
+              <div class="col-3">Customer <em data-type="customer" class="sort sort-customer fa fa-fw fa-sort"></em></div>
+              <div class="col-3">Type <em data-type="type" class="sort sort-type fa fa-fw fa-sort"></em></div>
+              <div class="col-2">Qty <em data-type="quantity" class="sort sort-quantity fa fa-fw fa-sort"></em></div>
+              <div class="col-2">Cost <em data-type="cost" class="sort sort-cost fa fa-fw fa-sort"></em></div>
+            </div>
+            <div class="item-area">
+              <!-- <div class="row">
+                <div class="col-2">6:40 AM</div>
+                <div class="col-3">John Dahl</div>
+                <div class="col-3">cheese</div>
+                <div class="col-2">2</div>
+                <div class="col-2">$20.00</div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../navBar/index.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
+

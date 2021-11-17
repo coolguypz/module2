@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Focused JavaScript | Module 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Bootstrap & core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  
+    <style>
+      body {
+        background-image: url("https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        color: white;
+      }
+
+      .mt-5 {
+        margin-top: 5px;
+      }
+    </style>
+
+    <!-- <script src="./_secret/keys.js"></script> -->
+
+  </head>
+
+  <body>
+      <div id="navgationBar"></div>
+      <script src="../navBar/index.js"></script>
+
+      <div class="container">
+        <h1 class="my-4 text-center text-lg-left">Twillio</h1>
+        <h6>text everyone</h6>
+  
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="numberInput">Number</label>
+              <input class="form-control" id="numberInput">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="messageInput">Message</label>
+              <textarea class="form-control" id="messageInput" maxlength="500"></textarea>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-send">Send</button>
+        </form>
+        
+        <div class="row text-center text-lg-left mt-5">
+            <div class="col-9">
+                <div class="container">
+                    <!-- container starts as empty. -->
+                    <div class="row">
+                      <div class="col">Date</div>
+                      <div class="col">Number</div>
+                      <div class="col">Message</div>
+                      <div class="col">Status</div>
+                    </div>
+                    <div class="message-list">
+                        <!--
+                        <div class="row">
+                            <div class="col">date</div>
+                            <div class="col">number</div>
+                            <div class="col">message</div>
+                            <div class="col">status</div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    </body>
+</html>
